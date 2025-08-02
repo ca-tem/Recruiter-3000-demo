@@ -3,61 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Recruiter 3000 Demo</title>
+  <title>AI Recruiting Assistant</title>
+  <script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, sans-serif;
-      background-color: #f7f7f7;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      font-family: Arial, sans-serif;
       text-align: center;
+      padding: 3rem;
     }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      color: #444;
-    }
-    a.button {
-      padding: 0.75rem 1.5rem;
-      background-color: #333;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    a.button:hover {
-      background-color: #555;
-    }
-    #vapi-container {
+    a {
+      display: inline-block;
       margin-top: 2rem;
+      text-decoration: none;
+      background: #007BFF;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+    }
+    a:hover {
+      background: #0056b3;
     }
   </style>
 </head>
 <body>
+  <h1>Meet the Recruiting Assistant</h1>
+  <p>This is a live demo of my AI assistant built with Vapi.</p>
 
-  <h1>Recruiter 3000</h1>
-  <p>Test drive our AI-powered recruiting assistant.</p>
-  <a href="https://your-lovable-portfolio-link.com" class="button" target="_blank">View Portfolio</a>
+  <!-- Vapi widget -->
+  <vapi-widget
+    public-key="a395c1fa-d46d-4875-86b7-89f5d4c89414"
+    assistant-id="3608fe41-b2cb-4e8e-857b-d5706781fc4a"
+    mode="chat"
+    theme="light"
+  ></vapi-widget>
 
-  <div id="vapi-container">
-    <script src="https://cdn.jsdelivr.net/npm/@vapi-ai/web-widget@latest"></script>
-    <vapi-widget
-      api-key="a395c1fa-d46d-4875-86b7-89f5d4c89414"
-      assistant-id="3608fe41-b2cb-4e8e-857b-d5706781fc4a"
-      start-behavior="click"
-      show-open-button="true">
-    </vapi-widget>
-  </div>
-
+  <a href="https://your-portfolio-link.com" target="_blank">Back to My Portfolio</a>
 </body>
 </html>
+
+
