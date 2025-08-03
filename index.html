@@ -3,63 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Recruiting Assistant</title>
+  <title>Recruiter 3000 Demo</title>
   <script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Helvetica Neue', sans-serif;
-      background: #f9fafb;
+      background-color: #f9fafb;
       color: #111827;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      height: 100vh;
       text-align: center;
+      position: relative;
+    }
+
+    /* Portfolio button in top-left */
+    .portfolio-link {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-decoration: none;
+      background: #2563eb;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background 0.2s ease;
+      font-size: 0.9rem;
+    }
+
+    .portfolio-link:hover {
+      background: #1e40af;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 0.5rem;
     }
 
     p {
       font-size: 1.2rem;
       margin-bottom: 2rem;
-      max-width: 500px;
+      color: #374151;
     }
 
-    a {
-      text-decoration: none;
-      background: #2563eb;
-      color: white;
+    /* Centered "Talk with AI" button */
+    .talk-button {
+      display: inline-block;
       padding: 0.75rem 1.5rem;
+      background-color: #10b981;
+      color: white;
       border-radius: 6px;
       font-weight: 600;
+      text-decoration: none;
       transition: background 0.2s ease;
     }
 
-    a:hover {
-      background: #1e40af;
+    .talk-button:hover {
+      background-color: #059669;
+    }
+
+    /* Position widget near bottom right (floating) */
+    vapi-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Meet the Recruiting Assistant</h1>
-  <p>This voice-enabled AI assistant can screen candidates, answer questions, and guide people through the hiring process. Try it now.</p>
 
-  <!-- Vapi widget -->
+  <!-- Portfolio link top-left -->
+  <a href="https://your-portfolio-link.com" class="portfolio-link" target="_blank">View Portfolio</a>
+
+  <!-- Main heading and description -->
+  <h1>Recruiter 3000</h1>
+  <p>Test drive the AI-powered recruiter</p>
+
+  <!-- Talk with AI button -->
+  <a href="#" class="talk-button" onclick="document.querySelector('vapi-widget').openWidget()">Talk with AI</a>
+
+  <!-- Vapi widget (voice mode) -->
   <vapi-widget
     public-key="a395c1fa-d46d-4875-86b7-89f5d4c89414"
     assistant-id="3608fe41-b2cb-4e8e-857b-d5706781fc4a"
-    mode="chat"
+    mode="voice"
     theme="light"
   ></vapi-widget>
 
-  <a href="https://your-portfolio-link.com" target="_blank">Back to My Portfolio</a>
 </body>
 </html>
-
 
