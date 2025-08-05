@@ -51,8 +51,9 @@
       color: #374151;
     }
 
-    /* Center the widget itself */
+    /* Ensure widget is inline and centered */
     vapi-widget {
+      position: static !important; /* Overrides floating bubble */
       display: block;
       margin: 0 auto;
     }
@@ -67,12 +68,13 @@
   <h1>Recruiter 3000</h1>
   <p>Test drive the AI-powered recruiter</p>
 
-  <!-- Vapi widget (voice mode) -->
+  <!-- Vapi widget inline -->
   <vapi-widget
     public-key="a395c1fa-d46d-4875-86b7-89f5d4c89414"
     assistant-id="3608fe41-b2cb-4e8e-857b-d5706781fc4a"
     mode="voice"
     theme="light"
+    show-open-button="false"  <!-- hides floating button -->
   ></vapi-widget>
 
 </body>
