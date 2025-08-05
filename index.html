@@ -51,27 +51,10 @@
       color: #374151;
     }
 
-    /* Centered "Talk with AI" button */
-    .talk-button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: #10b981;
-      color: white;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s ease;
-    }
-
-    .talk-button:hover {
-      background-color: #059669;
-    }
-
-    /* Position widget near bottom right (floating) */
+    /* Center the widget itself */
     vapi-widget {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
+      display: block;
+      margin: 0 auto;
     }
   </style>
 </head>
@@ -83,9 +66,6 @@
   <!-- Main heading and description -->
   <h1>Recruiter 3000</h1>
   <p>Test drive the AI-powered recruiter</p>
-
-  <!-- Talk with AI button -->
-  <a href="#" class="talk-button" onclick="document.querySelector('vapi-widget').openWidget()">Talk with AI</a>
 
   <!-- Vapi widget (voice mode) -->
   <vapi-widget
