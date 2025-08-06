@@ -49,8 +49,13 @@
     }
 
     h1 {
-    font-size: 3rem; /* 48px heading */
+    all: unset;            /* Clears any inherited styles */
+    display: block;        /* Restores block behavior */
+    font-size: 3rem !important;   /* Forces size */
+    font-weight: 700 !important;  /* Forces bold weight */
+    margin: 0 0 0.5rem 0;   /* Re-add spacing if needed */
     }
+
 
     p {
     font-size: 1.2rem; /* ~19px paragraph */
