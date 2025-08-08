@@ -6,24 +6,35 @@
   <title>Recruiter 3000 Demo</title>
   <script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
   <style>
-    body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  color: #111827;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-  position: relative;
+    /* Ensure predictable rem sizing */
+    html {
+      font-size: 16px;
+      height: 100%;
+    }
 
-  /* Background gradient + spotlight */
-  background:
-    radial-gradient(circle at 90% 90%, rgba(255, 255, 200, 0.3), transparent 60%),
-    linear-gradient(135deg, #f0f4ff 0%, #ffffff 50%, #f0f4ff 100%);
-}
+    /* Spotlight gradient + base layout */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #111827;
+
+      /* Background gradient + spotlight (forced in case something overrides) */
+      background:
+        radial-gradient(circle at 90% 90%, rgba(255, 255, 200, 0.35), transparent 60%),
+        linear-gradient(135deg, #f0f4ff 0%, #ffffff 50%, #f0f4ff 100%) !important;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      min-height: 100vh;
+    }
 
     /* Portfolio button in top-left */
     .portfolio-link {
@@ -39,31 +50,22 @@
       transition: background 0.2s ease;
       font-size: 0.9rem;
     }
+    .portfolio-link:hover { background: #1e40af; }
 
-    .portfolio-link:hover {
-      background: #1e40af;
-    }
-
-    html {
-    font-size: 16px; /* Sets 1rem = 16px baseline */
-    }
-
+    /* Force heading to ignore inherited sizes */
     h1 {
-    all: unset;            /* Clears any inherited styles */
-    display: block;        /* Restores block behavior */
-    font-size: 3rem !important;   /* Forces size */
-    font-weight: 700 !important;  /* Forces bold weight */
-    margin: 0 0 0.5rem 0;   /* Re-add spacing if needed */
+      all: unset;
+      display: block;
+      font-size: 3rem !important;
+      font-weight: 700 !important;
+      margin: 0 0 0.5rem 0;
     }
 
+    p { font-size: 1.2rem; }
 
-    p {
-    font-size: 1.2rem; /* ~19px paragraph */
-    }
-
-    /* Ensure widget is inline and centered */
+    /* Try to keep widget inline (some builds float by default) */
     vapi-widget {
-      position: static !important; /* Overrides floating bubble */
+      position: static !important;
       display: block;
       margin: 0 auto;
     }
@@ -78,16 +80,18 @@
   <h1>Recruiter 3000</h1>
   <p>Test drive the AI-powered recruiter</p>
 
-  <!-- Vapi widget inline -->
+  <!-- Vapi widget -->
+  <!-- hides floating button -->
   <vapi-widget
     public-key="a395c1fa-d46d-4875-86b7-89f5d4c89414"
     assistant-id="3608fe41-b2cb-4e8e-857b-d5706781fc4a"
     mode="voice"
     theme="light"
-    show-open-button="false"  <!-- hides floating button -->
+    show-open-button="false"
   ></vapi-widget>
 
 </body>
 </html>
+
 
 
